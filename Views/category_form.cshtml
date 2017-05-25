@@ -1,0 +1,16 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<div class="container text-center">
+  <h1>&#128293 Your To Do List! &#128169</h1>
+  <p>Add a category here</p>
+  <form  action="/categories" method="post">
+    <div class="form-group">
+      <label for="category-name">Category name:</label>
+      <input type="text" name="category-name" id="category-name" class="form-control">
+      <button type="subnit" class="btn btn-info">Add</button>
+    </div>
+  </form>
+  <p><a href="/">Home</a></p>
+</div>

@@ -1,0 +1,34 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<div class="container text-center">
+  <h1>&#128293 To Do List &#128169</h1>
+  <h3>Add a new task to @Model["category"].GetName()</h3>
+  <form action="/tasks" method="post">
+    <div class="form-group">
+      <input id='category-id' name='category-id' type='hidden' value='@Model["category"].GetId()'>
+      <label for='task-description'>Task description</label>
+      <input id='task-description' name='task-description' type='text' class="form-control">
+    </div>
+    <button type="submit" class="btn btn-info">Add task</button>
+  </form>
+</div>
+
+
+
+<!-- @{
+Layout="Shared/_Layout.cshtml";
+}
+
+<div class="container text-center">
+<h1>Add a new to @Model["category"].GetName()</h1>
+<form action="/tasks" method="post">
+<div class="form-group">
+<input id="category-id" type="hidden" name="category=id" value='@Model["category"].GetId()'>
+<label for="task-description">Task Description</label>
+<input id="task-description" type="text" name="task-description" class="form-control">
+<button type="submit" class="btn btn-info">Add Task</button>
+</div>
+</form>
+</div> -->

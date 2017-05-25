@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 
-namespace Todo.Objects
+namespace ToDo.Objects
 {
   public class Category
   {
     private static List<Category> _instances = new List<Category> {};
     private string _name;
     private int _id;
-    private List<Task> _ tasks;
+    private List<Task> _tasks;
 
     public Category (string categoryName)
     {
@@ -34,7 +34,19 @@ namespace Todo.Objects
     }
     public static Category Find(int searchId)
     {
-      reutn _instances[searchId-1];
+      return _instances[searchId-1];
+    }
+    public List<Task> GetTasks()
+    {
+      return _tasks;
+    }
+    public void AddTask(Task task)
+    {
+      _tasks.Add(task);
+    }
+    public void DeleteTask(int idToDelete)
+    {
+      Task.Find(idToDelete).SetExistence(false);
     }
   }
 }

@@ -6,6 +6,7 @@ namespace ToDo.Objects
   {
     private string _description;
     private int _id;
+    private bool _doesExist;
     private static List<Task> _instances = new List<Task> {};
 
     public Task(string newDescription)
@@ -13,6 +14,7 @@ namespace ToDo.Objects
       _description = newDescription;
       _id = _instances.Count;
       _instances.Add(this);
+      _doesExist = true;
     }
     public string GetDescription()
     {
@@ -37,6 +39,14 @@ namespace ToDo.Objects
     public static Task Find(int searchId)
     {
       return _instances[searchId];
+    }
+    public void SetExistence(bool newExistence)
+    {
+      _doesExist = newExistence;
+    }
+    public bool GetExistence()
+    {
+      return _doesExist;
     }
   }
 }
